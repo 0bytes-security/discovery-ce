@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@clerk/elements':
         specifier: ^0.12.1
-        version: 0.12.4(@clerk/clerk-react@5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@clerk/shared@2.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react-dom@18.3.0)(@types/react@18.3.1)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 0.12.4(@clerk/clerk-react@5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@clerk/shared@2.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react-dom@18.3.0)(@types/react@18.3.1)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/nextjs':
         specifier: ^5.2.12
-        version: 5.3.0(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.3.0(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/types':
         specifier: ^4.12.0
         version: 4.13.0
@@ -133,7 +133,7 @@ importers:
         version: 0.395.0(react@18.3.1)
       next:
         specifier: 14.2.3
-        version: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8)
+        version: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8)
       next-themes:
         specifier: ^0.3.0
         version: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -215,10 +215,10 @@ importers:
         version: 19.5.4(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)
       '@nx/next':
         specifier: 19.5.4
-        version: 19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))
+        version: 19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))
       '@nx/playwright':
         specifier: 19.5.4
-        version: 19.5.4(@babel/traverse@7.25.0)(@playwright/test@1.45.3)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)
+        version: 19.5.4(@babel/traverse@7.25.0)(@playwright/test@1.46.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)
       '@nx/react':
         specifier: 19.5.4
         version: 19.5.4(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))
@@ -230,7 +230,7 @@ importers:
         version: 18.1.0(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))
       '@playwright/test':
         specifier: ^1.36.0
-        version: 1.45.3
+        version: 1.46.0
       '@swc-node/register':
         specifier: ~1.9.1
         version: 1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4)
@@ -1889,8 +1889,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@playwright/test@1.45.3':
-    resolution: {integrity: sha512-UKF4XsBfy+u3MFWEH44hva1Q8Da28G6RFtR2+5saw+jgAFQV5yYnB1fu68Mz7fO+5GJF3wgwAIs0UelU8TxFrA==}
+  '@playwright/test@1.46.0':
+    resolution: {integrity: sha512-/QYft5VArOrGRP5pgkrfKksqsKA6CEFyGQ/gjNe6q0y4tZ1aaPfq4gIjudr1s3D+pXyrPRdsy4opKDrjBabE5w==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6689,13 +6689,13 @@ packages:
     resolution: {integrity: sha512-Ie9z/WINcxxLp27BKOCHGde4ITq9UklYKDzVo1nhk5sqGEXU3FpkwP5GM2voTGJkGd9B3Otl+Q4uwSOeSUtOBA==}
     engines: {node: '>=14.16'}
 
-  playwright-core@1.45.3:
-    resolution: {integrity: sha512-+ym0jNbcjikaOwwSZycFbwkWgfruWvYlJfThKYAlImbxUgdWFO2oW70ojPm4OpE4t6TAo2FY/smM+hpVTtkhDA==}
+  playwright-core@1.46.0:
+    resolution: {integrity: sha512-9Y/d5UIwuJk8t3+lhmMSAJyNP1BUC/DqP3cQJDQQL/oWqAiuPTLgy7Q5dzglmTLwcBRdetzgNM/gni7ckfTr6A==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.45.3:
-    resolution: {integrity: sha512-QhVaS+lpluxCaioejDZ95l4Y4jSFCsBvl2UZkpeXlzxmqS+aABr5c82YmfMHrL6x27nvrvykJAFpkzT2eWdJww==}
+  playwright@1.46.0:
+    resolution: {integrity: sha512-XYJ5WvfefWONh1uPAUAi0H2xXV5S3vrtcnXe6uAOgdGi3aSpqOSXX08IAjXW34xitfuOJsvXU5anXZxPSEQiJw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -9405,7 +9405,7 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       tslib: 2.4.1
 
-  '@clerk/elements@0.12.4(@clerk/clerk-react@5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@clerk/shared@2.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react-dom@18.3.0)(@types/react@18.3.1)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/elements@0.12.4(@clerk/clerk-react@5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@clerk/shared@2.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react-dom@18.3.0)(@types/react@18.3.1)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/clerk-react': 5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -9418,19 +9418,19 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       xstate: 5.17.1
     optionalDependencies:
-      next: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8)
+      next: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8)
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
 
-  '@clerk/nextjs@5.3.0(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/nextjs@5.3.0(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/backend': 1.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/clerk-react': 5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/types': 4.13.0
       crypto-js: 4.2.0
-      next: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8)
+      next: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8)
       path-to-regexp: 6.2.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -10169,9 +10169,9 @@ snapshots:
       - typescript
       - verdaccio
 
-  '@nrwl/next@19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))':
+  '@nrwl/next@19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))':
     dependencies:
-      '@nx/next': 19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))
+      '@nx/next': 19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/traverse'
@@ -10713,10 +10713,10 @@ snapshots:
       - supports-color
       - verdaccio
 
-  '@nx/next@19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))':
+  '@nx/next@19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))':
     dependencies:
       '@babel/plugin-proposal-decorators': 7.24.7(@babel/core@7.24.9)
-      '@nrwl/next': 19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))
+      '@nrwl/next': 19.5.4(@babel/core@7.24.9)(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8))(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))
       '@nx/devkit': 19.5.4(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))
       '@nx/eslint': 19.5.4(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))
       '@nx/js': 19.5.4(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)
@@ -10731,7 +10731,7 @@ snapshots:
       file-loader: 6.2.0(webpack@5.93.0(@swc/core@1.5.29(@swc/helpers@0.5.12)))
       fs-extra: 11.2.0
       ignore: 5.3.1
-      next: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8)
+      next: 14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8)
       semver: 7.6.3
       tslib: 2.6.3
       webpack-merge: 5.10.0
@@ -10888,7 +10888,7 @@ snapshots:
   '@nx/nx-win32-x64-msvc@19.5.4':
     optional: true
 
-  '@nx/playwright@19.5.4(@babel/traverse@7.25.0)(@playwright/test@1.45.3)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)':
+  '@nx/playwright@19.5.4(@babel/traverse@7.25.0)(@playwright/test@1.46.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))(typescript@5.5.4)':
     dependencies:
       '@nx/devkit': 19.5.4(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))
       '@nx/eslint': 19.5.4(@babel/traverse@7.25.0)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.5.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.12)))
@@ -10897,7 +10897,7 @@ snapshots:
       minimatch: 9.0.3
       tslib: 2.6.3
     optionalDependencies:
-      '@playwright/test': 1.45.3
+      '@playwright/test': 1.46.0
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -11106,9 +11106,9 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@playwright/test@1.45.3':
+  '@playwright/test@1.46.0':
     dependencies:
-      playwright: 1.45.3
+      playwright: 1.46.0
 
   '@prisma/client@5.18.0(prisma@5.18.0)':
     optionalDependencies:
@@ -16173,7 +16173,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.45.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8):
+  next@14.2.3(@babel/core@7.24.9)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.8):
     dependencies:
       '@next/env': 14.2.3
       '@swc/helpers': 0.5.5
@@ -16194,7 +16194,7 @@ snapshots:
       '@next/swc-win32-arm64-msvc': 14.2.3
       '@next/swc-win32-ia32-msvc': 14.2.3
       '@next/swc-win32-x64-msvc': 14.2.3
-      '@playwright/test': 1.45.3
+      '@playwright/test': 1.46.0
       sass: 1.77.8
     transitivePeerDependencies:
       - '@babel/core'
@@ -16732,11 +16732,11 @@ snapshots:
     dependencies:
       find-up: 6.3.0
 
-  playwright-core@1.45.3: {}
+  playwright-core@1.46.0: {}
 
-  playwright@1.45.3:
+  playwright@1.46.0:
     dependencies:
-      playwright-core: 1.45.3
+      playwright-core: 1.46.0
     optionalDependencies:
       fsevents: 2.3.2
 
