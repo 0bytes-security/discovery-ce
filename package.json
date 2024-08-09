@@ -86,7 +86,7 @@
     "@nx/js": "19.5.4",
     "@nx/next": "19.5.4",
     "@nx/playwright": "19.5.4",
-    "@nx/react": "19.5.4",
+    "@nx/react": "19.5.7",
     "@nx/workspace": "19.5.4",
     "@nxlv/python": "^18.1.0",
     "@playwright/test": "^1.36.0",
