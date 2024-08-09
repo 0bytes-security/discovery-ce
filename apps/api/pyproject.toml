@@ -22,7 +22,7 @@ readme = 'README.md'
 
   [tool.poetry.dependencies]
   python = "^3.12"
-  fastapi = "^0.111.1"
+  fastapi = "^0.112.0"
   tortoise-orm = "^0.21.5"
   celery = {extras = ["redis"], version = "^5.4.0"}
   docker = "^7.1.0"
