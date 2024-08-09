@@ -1,0 +1,36 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /apps/api
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /apps/discovery
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /docker/api
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /libs/shared
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /prisma
+    schedule:
+      interval: daily

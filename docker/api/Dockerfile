@@ -1,5 +1,5 @@
 # Stage 1: Build Stage
-FROM python:3.12 AS app-base
+FROM python:3.12@sha256:c7862834f921957523cc4dab6d7795a7a0d19f1cd156c1ecd3a3a08c1108c9a4 AS app-base
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -25,7 +25,7 @@ RUN poetry config virtualenvs.create false \
     && poetry install --no-dev --no-interaction --no-ansi
 
 # Stage 2: Runtime Stage
-FROM python:3.12-slim AS app-runtime
+FROM python:3.12-slim@sha256:105e9d85a67db1602e70fa2bbb49c1e66bae7e3bdcb6259344fe8ca116434f74 AS app-runtime
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
