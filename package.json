@@ -88,7 +88,7 @@
     "@nx/playwright": "19.5.4",
     "@nx/react": "19.5.4",
     "@nx/workspace": "19.5.4",
-    "@nxlv/python": "^18.1.0",
+    "@nxlv/python": "^19.0.0",
     "@playwright/test": "^1.36.0",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.3.12",
