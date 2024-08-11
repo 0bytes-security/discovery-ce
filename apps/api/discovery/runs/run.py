@@ -1,9 +1,11 @@
 import asyncio
+import contextlib
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from datetime import datetime
 from typing import (
     Generic,
+    Literal,
     NotRequired,
     TypedDict,
     TypeVar,
@@ -18,8 +20,7 @@ from pydantic import BaseModel, ValidationError, field_validator
 
 from discovery.containers.container import Container
 from discovery.containers.volume import ContainerVolume
-from discovery.core import config
-from discovery.core.pusher import Channels, Events, get_pusher_client
+from discovery.core import config, pusher
 from discovery.db.models import Run as Model
 from discovery.db.models import RunStatus as Status
 from discovery.utils import validate_domain
@@ -58,6 +59,15 @@ class ParamsValidator(GenericParamsValidator[T], Generic[T]):
 Parameters = TypeVar("Parameters", bound=DefaultParameters)
 
 
+class TriggerEventKwargs(TypedDict):
+    id: str
+    image: str
+    owner_id: str
+    parent_id: NotRequired[str]
+    params: NotRequired[dict]
+    status: list[Status]
+
+
 class Run(ABC, Generic[Parameters]):
     def __init__(
         self,
@@ -75,7 +85,6 @@ class Run(ABC, Generic[Parameters]):
         self._container_volume = container_volume or ContainerVolume(
             base_path=config.docker_config.volumes_path
         )
-        self._pusher = get_pusher_client()
 
     def _get_parameters(self):
         orig_bases = self.__orig_bases__
@@ -97,16 +106,14 @@ class Run(ABC, Generic[Parameters]):
             owner_id=params.get("owner_id"),
             parent=params.get("parent_id"),
         ).save()
-        self._pusher.trigger(
-            Channels.RUNS,
-            Events.RUN_CREATED,
-            {
-                "id": self.task.request.id,
-                "name": self.image,
-                "parameters": params,
-                "owner_id": params.get("owner_id"),
-                "parent_id": params.get("parent_id"),
-            },
+        self.trigger_event(
+            event="run.created",
+            id=self.task.request.id,
+            image=self.image,
+            owner_id=params.get("owner_id"),
+            parent_id=params.get("parent_id"),
+            params=params,
+            status=[Status.PENDING],
         )
 
     async def on_started(self) -> None:
@@ -117,18 +124,16 @@ class Run(ABC, Generic[Parameters]):
             run.status = Status.RUNNING
             run.started_at = datetime.now(tz=config.timezone)
             await run.save()
-            self._pusher.trigger(
-                Channels.RUNS,
-                Events.RUN_STATUS_CHANGED,
-                {
-                    "id": self.task.request.id,
-                    "name": run.name,
-                    "owner_id": run.owner_id,
-                    "status": [
-                        prev_status.value,
-                        run.status.value,
-                    ],
-                },
+            self.trigger_event(
+                event="run.status.changed",
+                id=self.task.request.id,
+                owner_id=run.owner_id,
+                parent_id=run.parent_id,
+                image=self.image,
+                status=[
+                    prev_status.value,
+                    run.status.value,
+                ],
             )
 
     @abstractmethod
@@ -152,18 +157,16 @@ class Run(ABC, Generic[Parameters]):
             )
             run.failed_at = datetime.now(tz=config.timezone)
             await run.save()
-            self._pusher.trigger(
-                Channels.RUNS,
-                Events.RUN_STATUS_CHANGED,
-                {
-                    "id": self.task.request.id,
-                    "owner_id": run.owner_id,
-                    "name": run.name,
-                    "status": [
-                        prev_status.value,
-                        run.status.value,
-                    ],
-                },
+            self.trigger_event(
+                event="run.status.changed",
+                id=self.task.request.id,
+                owner_id=run.owner_id,
+                parent_id=run.parent_id,
+                image=self.image,
+                status=[
+                    prev_status.value,
+                    run.status.value,
+                ],
             )
 
     def validate_parameters(self, **params: Unpack[Parameters]) -> None:
@@ -178,6 +181,18 @@ class Run(ABC, Generic[Parameters]):
         except ValidationError as err:
             asyncio.run(self.on_error(error=err.errors()))
             raise err
+
+    def trigger_event(
+        self,
+        event: Literal["run.created", "run.status.changed"],
+        **kwargs: Unpack[TriggerEventKwargs],
+    ) -> None:
+        with contextlib.suppress(Exception):
+            pusher.get_pusher_client().trigger(
+                pusher.Channels.RUNS,
+                event,
+                data=kwargs,
+            )
 
     @property
     def image(self) -> str:
