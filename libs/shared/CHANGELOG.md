@@ -1,3 +1,18 @@
+## 1.4.0 (2024-08-11)
+
+
+### 🚀 Features
+
+- **docker:** add Docker environment for API development
+
+- **components:** add icons and spinner components
+
+- **auth:** integrate Clerk for user authentication
+
+- **discovery:** initial dashboard setup
+
+- **prisma:** integrate Prisma ORM for type-safe database interactions
+
 ## 1.3.0 (2024-08-05)
 
 
