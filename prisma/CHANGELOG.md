@@ -1,21 +1,3 @@
-## 1.5.0 (2024-08-11)
-
-
-### 🚀 Features
-
-- **docker:** add Docker environment for API development
-
-- **auth:** integrate Clerk for user authentication
-
-- **discovery:** initial dashboard setup
-
-- **prisma:** integrate Prisma ORM for type-safe database interactions
-
-
-### 🩹 Fixes
-
-- **deps:** update dependency tailwind-merge to v2.5.0
-
 ## 1.4.0 (2024-08-11)
 
 
