@@ -75,7 +75,8 @@
           "commitReferences": true,
           "versionTitleDate": true,
           "mapAuthorsToGitHubUsernames": true
-        }
+        },
+        "createRelease": "github"
       },
       "projectChangelogs": {
         "renderOptions": {
@@ -83,8 +84,7 @@
           "commitReferences": true,
           "versionTitleDate": true,
           "mapAuthorsToGitHubUsernames": true
-        },
-        "createRelease": "github"
+        }
       }
     }
   }
