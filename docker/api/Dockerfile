@@ -12,8 +12,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Poetry
-RUN pip install poetry
-
+RUN pip install poetry==1.8.3
 # Set the working directory in the build stage
 WORKDIR /app
 
@@ -25,7 +24,7 @@ RUN poetry config virtualenvs.create false \
     && poetry install --no-dev --no-interaction --no-ansi
 
 # Stage 2: Runtime Stage
-FROM python:3.12-slim@sha256:105e9d85a67db1602e70fa2bbb49c1e66bae7e3bdcb6259344fe8ca116434f74 AS app-runtime
+FROM app-base AS app-runtime
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
