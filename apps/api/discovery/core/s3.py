@@ -2,12 +2,10 @@ import boto3
 from botocore.client import Config as BotoConfig
 
 from discovery.core import config
-from discovery.core.logger import logger
 
 
 def get_s3_client():
     s3_config = config.s3_config
-    logger.info(s3_config)
     return boto3.resource(
         "s3",
         region_name=s3_config.region_name,
