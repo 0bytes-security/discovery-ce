@@ -12,7 +12,18 @@ from discovery.runs.run import DefaultParameters, Run
 
 
 class Registry:
+    _instance = None
+    _initialized = False
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls, *args, **kwargs)
+        return cls._instance
+
     def __init__(self):
+        if self._initialized:
+            return
+        self._initialized = True
         self.tasks: list[str] = []
         try:
             self.find_tasks()
@@ -75,7 +86,7 @@ class Registry:
             module = importlib.import_module(task_name)
             task_class = getattr(module, "Task", None)
             params_class = getattr(module, "Parameters", None)
-            if issubclass(task_class, Run) and type(params_class) == type(
+            if issubclass(task_class, Run) and type(params_class) == type(  # noqa: E721
                 DefaultParameters
             ):
                 logger.info(f"Validated task module: {task_name}")
