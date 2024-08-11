@@ -8,7 +8,6 @@ from celery import Task
 from pydantic import BaseModel, Field
 
 from discovery.core import config
-from discovery.core.pusher import Channels, Events
 from discovery.db.models import Run as Model
 from discovery.db.models import RunStatus as Status
 from discovery.runs.run import DefaultParameters, Run, RunResult
@@ -109,18 +108,16 @@ class Task(BASE):
             run.status = Status.SUCCESS
             run.completed_at = datetime.now(tz=config.timezone)
             await run.save()
-            self._pusher.trigger(
-                Channels.RUNS,
-                Events.RUN_STATUS_CHANGED,
-                {
-                    "id": self.task.request.id,
-                    "name": run.name,
-                    "owner_id": run.owner_id,
-                    "status": [
-                        prev_status.value,
-                        run.status.value,
-                    ],
-                },
+            self.trigger_event(
+                event="run.status.changed",
+                id=self.task.request.id,
+                owner_id=run.owner_id,
+                parent_id=run.parent_id,
+                image=self.image,
+                status=[
+                    prev_status.value,
+                    run.status.value,
+                ],
             )
 
     def export_domains(self, domains: list[str]) -> None:
