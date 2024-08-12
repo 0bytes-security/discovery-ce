@@ -25,6 +25,7 @@ class Registry:
             return
         self._initialized = True
         self.tasks: list[str] = []
+        self.tasks_info: dict[str, tuple] = {}
         try:
             self.find_tasks()
             self.register_discovered_tasks()
@@ -86,15 +87,19 @@ class Registry:
             module = importlib.import_module(task_name)
             task_class = getattr(module, "Task", None)
             params_class = getattr(module, "Parameters", None)
-            if issubclass(task_class, Run) and type(params_class) == type(  # noqa: E721
-                DefaultParameters
-            ):
-                logger.info(f"Validated task module: {task_name}")
-                return task_class
-            else:
+            results_class = getattr(module, "Result", None)
+            if not issubclass(task_class, Run):
+                raise RuntimeError(f"Module {task_name} is not a valid Task class.")
+            if type(params_class) != type(DefaultParameters):  # noqa: E721
                 raise RuntimeError(
-                    f"Module {task_name} does not have a valid Task or Parameters class."  # noqa: E501
+                    f"Module {task_name} does not have a valid Parameters class."
                 )
+            if results_class is None:
+                raise RuntimeError(
+                    f"Module {task_name} does not have a valid Result class."
+                )
+            self.tasks_info[task_name] = (params_class, results_class)
+            return task_class
         except (ImportError, KeyError, RuntimeError) as err:
             logger.error(f"Failed to import or validate task module {task_name}: {err}")
             raise RuntimeError(f"Failed to import task {task_name}") from err
