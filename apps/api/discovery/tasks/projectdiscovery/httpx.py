@@ -39,7 +39,7 @@ class Item(BaseModel):
     screenshot: str = Field(alias="screenshot_path_rel")
 
 
-class Items(BaseModel):
+class Result(BaseModel):
     items: list[Item]
 
 
@@ -126,10 +126,10 @@ class Task(BASE):
             path, "\n".join([domain for domain in domains if validate_domain(domain)])
         )
 
-    def parse_results(self) -> Items:
+    def parse_results(self) -> Result:
         results_json = self.container_volume.read("results.json")
         items = [self.parse_item(item) for item in results_json.splitlines()]
-        return Items(items=items)
+        return Result(items=items)
 
     def parse_item(self, item: str) -> Item:
         parsed = json.loads(item)
