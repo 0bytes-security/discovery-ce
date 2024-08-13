@@ -226,8 +226,8 @@ importers:
         specifier: 19.5.7
         version: 19.5.7(@swc-node/register@1.10.9(@swc/core@1.7.10(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.10(@swc/helpers@0.5.12))
       '@nxlv/python':
-        specifier: ^19.0.0
-        version: 19.0.1(@swc-node/register@1.10.9(@swc/core@1.7.10(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.10(@swc/helpers@0.5.12))
+        specifier: ^19.0.2
+        version: 19.0.2(@swc-node/register@1.10.9(@swc/core@1.7.10(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.10(@swc/helpers@0.5.12))
       '@playwright/test':
         specifier: ^1.36.0
         version: 1.46.0
@@ -1809,8 +1809,8 @@ packages:
   '@nx/workspace@19.5.7':
     resolution: {integrity: sha512-HtyRP0358QxKCpRkEffG0SAvZ9aIWvazMX6vlyHoJt8fkUuxN/wkkR80TTmTurqt87OpJK67ylUx0eOzzzm8Lw==}
 
-  '@nxlv/python@19.0.1':
-    resolution: {integrity: sha512-V5rCZ+DS7I+sAbBxC3dppRtXIoFs5o6hZs0Nx7qsLQQTSviSdLb8RqYkUEVetSI2+g6tkmAooRRmRlR7ElY7OQ==}
+  '@nxlv/python@19.0.2':
+    resolution: {integrity: sha512-+sRX/awjaDfu7Tm7uK+KGNAUvGOyCgqyGMgi3yElGphlsoyUPVcqOyZiOTg3eKm5QE+GGw/VRPlrUWDvSJvI+w==}
 
   '@oxc-resolver/binding-darwin-arm64@1.10.2':
     resolution: {integrity: sha512-aOCZYXqmFL+2sXlaVkYbAOtICGGeTFtmdul8OimQfOXHJods6YHJ2nR6+rEeBcJzaXyXPP18ne1IsEc4AYL1IA==}
@@ -10960,7 +10960,7 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@nxlv/python@19.0.1(@swc-node/register@1.10.9(@swc/core@1.7.10(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.10(@swc/helpers@0.5.12))':
+  '@nxlv/python@19.0.2(@swc-node/register@1.10.9(@swc/core@1.7.10(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.10(@swc/helpers@0.5.12))':
     dependencies:
       '@iarna/toml': 2.2.5
       '@nx/devkit': 19.5.7(nx@19.5.7(@swc-node/register@1.10.9(@swc/core@1.7.10(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.10(@swc/helpers@0.5.12)))
