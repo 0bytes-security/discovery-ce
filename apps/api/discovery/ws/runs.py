@@ -2,12 +2,12 @@ from enum import Enum
 from typing import TypedDict, Unpack
 
 from fastapi import WebSocket
-from pydantic import BaseModel, ValidationError
+from pydantic import ValidationError
 from tortoise.expressions import Q
 
 from discovery.core.celery import celery
-from discovery.db.models import Run
-from discovery.runs.registry import registry
+from discovery.db.models import Registry, Run
+from discovery.routes.tasks import TaskRequest as RunTaskParameters
 
 from .manager import BaseMessage, ConnectionManager
 
@@ -15,14 +15,6 @@ from .manager import BaseMessage, ConnectionManager
 class QueryParameters(TypedDict):
     id: str
     owner_id: str
-
-
-class RunTaskParameters(BaseModel):
-    task: str
-    params: dict[str, any]
-
-    class Config:
-        arbitrary_types_allowed = True
 
 
 class AvailableActions(str, Enum):
@@ -82,16 +74,18 @@ class RunsWebSocket(ConnectionManager):
         runs = await self.get_runs(**data)
         await self.respond(to=sender, data=runs, success=True)
 
-    async def process_run_task(
-        self, sender: WebSocket, message: RunTaskMessage
-    ) -> None:
+    async def process_run_task(self, sender: WebSocket, message: RunTaskMessage) -> None:
         data = message.data
-        task_name = data.task
-        params = data.params
-        if task_name in registry.tasks:
-            task = celery.send_task(
-                name=task_name,
-                kwargs=params,
+        task = await Registry.filter(id=data.id).first()
+        if task:
+            result = celery.send_task(
+                name="task_runner",
+                kwargs={
+                    "schema": task.schema,
+                    "owner_id": data.owner_id,
+                    "parent_id": data.parent_id,
+                    "parameters": data.parameters,
+                },
             )
         else:
             return await self.respond(
@@ -99,7 +93,7 @@ class RunsWebSocket(ConnectionManager):
                 message=f"Invalid task: {data.task}",
                 success=False,
             )
-        await self.respond(to=sender, data={"id": task.id}, success=True)
+        await self.respond(to=sender, data={"id": result.id}, success=True)
 
     async def get_runs(self, **params: Unpack[QueryParameters]) -> list[dict[str, any]]:
         filters = Q(Q(id=params["id"]), Q(owner_id=params["owner_id"]), join_type="AND")
