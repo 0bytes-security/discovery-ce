@@ -1,3 +1,25 @@
+## 1.5.0 (2024-08-23)
+
+
+### 🚀 Features
+
+- **api:** register new tasks from schema files ([1ce8f40](https://github.com/0bytes-security/discovery-ce/commit/1ce8f40))
+- **cli:** introduce CLI tool for schema generation and validation ([2b00f83](https://github.com/0bytes-security/discovery-ce/commit/2b00f83))
+- **schema:** add task and workflow schema ([5ccb0d5](https://github.com/0bytes-security/discovery-ce/commit/5ccb0d5))
+- **tasks:** implement schema-based task execution ([7eee1c5](https://github.com/0bytes-security/discovery-ce/commit/7eee1c5))
+
+### 🩹 Fixes
+
+- **containers:** update `read` method to return correct types ([195dc9d](https://github.com/0bytes-security/discovery-ce/commit/195dc9d))
+- **deps:** update dependency tailwind-merge to v2.5.0 ([ef1b36a](https://github.com/0bytes-security/discovery-ce/commit/ef1b36a))
+- **docker:** specify Poetry version and optimize runtime image ([941aacc](https://github.com/0bytes-security/discovery-ce/commit/941aacc))
+- **httpx:** align result class with updated task validation ([84e03e2](https://github.com/0bytes-security/discovery-ce/commit/84e03e2))
+- **lint-staged:** update to format and lint staged Python files only ([7a0098c](https://github.com/0bytes-security/discovery-ce/commit/7a0098c))
+
+### ❤️  Thank You
+
+- Mohamed Ali
+
 ## 1.4.0 (2024-08-11)
 
 

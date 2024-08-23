@@ -1,3 +1,14 @@
+## 1.5.0 (2024-08-23)
+
+
+### 🩹 Fixes
+
+- **deps:** update dependency tailwind-merge to v2.5.0
+
+- **docker:** specify Poetry version and optimize runtime image
+
+- **lint-staged:** update to format and lint staged Python files only
+
 ## 1.4.0 (2024-08-11)
 
 
