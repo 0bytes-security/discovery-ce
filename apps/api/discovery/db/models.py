@@ -33,3 +33,18 @@ class Run(Model):
     completed_at = fields.DatetimeField(null=True)
     created_at = DatetimeField(auto_now_add=True)
     updated_at = DatetimeField(auto_now=True)
+
+
+class SchemaType(str, Enum):
+    TASK = "TASK"
+    WORKFLOW = "WORKFLOW"
+
+
+class Registry(Model):
+    id = fields.CharField(max_length=256, pk=True)
+    name = fields.TextField(null=True)
+    description = fields.TextField(null=True)
+    schema = fields.JSONField()
+    type = fields.CharEnumField(SchemaType)
+    created_at = DatetimeField(auto_now_add=True)
+    updated_at = DatetimeField(auto_now=True)

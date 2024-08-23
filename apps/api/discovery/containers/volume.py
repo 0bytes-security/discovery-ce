@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from enum import Enum
 from os import chown
 from pathlib import Path
-from typing import AnyStr, List, Optional
+from typing import List, Optional, Union
 from uuid import uuid4
 
 from discovery.core.s3 import BUCKET_NAME, get_s3_client
@@ -42,9 +42,7 @@ DEFAULT_GID = 1000
 
 
 class ContainerVolume:
-    def __init__(
-        self, base_path: str, mode: Mode = Mode.READ_WRITE, change_owner: bool = True
-    ) -> None:
+    def __init__(self, base_path: str, mode: Mode = Mode.READ_WRITE, change_owner: bool = True) -> None:
         """Initialize a new ContainerVolume object.
 
         Args:
@@ -89,7 +87,7 @@ class ContainerVolume:
         except OSError as err:
             raise RuntimeError(f"Failed to write file {path}") from err
 
-    def read(self, path: str, read_bytes: bool = False) -> AnyStr:
+    def read(self, path: str, read_bytes: bool = False) -> Union[str, bytes]:
         """Read the content of a file in the volume.
 
         Args:
@@ -114,9 +112,7 @@ class ContainerVolume:
             name (str): The name of the directory.
         """
         try:
-            (self._volume_path / name).mkdir(
-                mode=DEFAULT_UNIX_PERMISSIONS, parents=True
-            )
+            (self._volume_path / name).mkdir(mode=DEFAULT_UNIX_PERMISSIONS, parents=True)
         except OSError as err:
             raise RuntimeError(f"Failed to create directory {name}") from err
 
@@ -186,6 +182,4 @@ class ContainerVolume:
         try:
             shutil.rmtree(self._volume_path)
         except OSError as err:
-            raise RuntimeError(
-                f"Failed to clean up volume {self._volume_path}"
-            ) from err
+            raise RuntimeError(f"Failed to clean up volume {self._volume_path}") from err

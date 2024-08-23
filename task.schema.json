@@ -1,0 +1,213 @@
+{
+  "$defs": {
+    "Output": {
+      "properties": {
+        "description": {
+          "description": "The description of the output.",
+          "title": "Description",
+          "type": "string"
+        },
+        "schema": {
+          "description": "The schema of the output, if applicable.",
+          "example": [
+            "{ 'type': 'object', 'properties': { 'foo': { 'type': 'string' } } }",
+            "{ 'type': 'array', 'items': { 'type': 'object', 'properties': { 'bar': { 'type': 'string' } } } }"
+          ],
+          "title": "Schema",
+          "type": "object"
+        },
+        "is-file": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether the output is a file.",
+          "title": "Is-File"
+        },
+        "file-type": {
+          "anyOf": [
+            {
+              "enum": [
+                "json",
+                "jsonl",
+                "csv",
+                "txt"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The file type.",
+          "title": "File-Type"
+        }
+      },
+      "required": [
+        "description",
+        "schema"
+      ],
+      "title": "Output",
+      "type": "object"
+    },
+    "Parameter": {
+      "properties": {
+        "description": {
+          "description": "The description of the parameter.",
+          "title": "Description",
+          "type": "string"
+        },
+        "schema": {
+          "description": "The schema of the parameter, if the parameter type is object or array.",
+          "example": "{ 'type': 'object', 'properties': { 'foo': { 'type': 'string' } } }",
+          "title": "Schema",
+          "type": "object"
+        },
+        "default": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The default value of the parameter.",
+          "title": "Default"
+        },
+        "is-file": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether the parameter is a file.",
+          "title": "Is-File"
+        },
+        "file-type": {
+          "anyOf": [
+            {
+              "enum": [
+                "json",
+                "jsonl",
+                "csv",
+                "txt"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The file type.",
+          "title": "File-Type"
+        }
+      },
+      "required": [
+        "description",
+        "schema"
+      ],
+      "title": "Parameter",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "version": {
+      "anyOf": [
+        {
+          "const": "1.0",
+          "enum": [
+            "1.0"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": "1.0",
+      "description": "Task schema version.",
+      "title": "Version"
+    },
+    "id": {
+      "description": "The identifier of the task.",
+      "pattern": "^[a-z0-9-./]+$",
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "The name of the task.",
+      "title": "Name"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "The description of the task.",
+      "title": "Description"
+    },
+    "image": {
+      "description": "The image to use for the task.",
+      "title": "Image",
+      "type": "string"
+    },
+    "parameters": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Parameter"
+      },
+      "description": "The parameters for the task.",
+      "title": "Parameters",
+      "type": "object"
+    },
+    "command": {
+      "description": "The command template for the task.",
+      "examples": [
+        "nmap $target"
+      ],
+      "title": "Command",
+      "type": "string"
+    },
+    "outputs": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Output"
+      },
+      "description": "The outputs for the task.",
+      "title": "Outputs",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "image",
+    "parameters",
+    "command",
+    "outputs"
+  ],
+  "title": "Task",
+  "type": "object"
+}

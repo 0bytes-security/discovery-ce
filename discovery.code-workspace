@@ -54,7 +54,14 @@
       "editor.defaultFormatter": "charliermarsh.ruff",
       "editor.formatOnSave": true
     },
-    "typescript.tsdk": "📦 Workspace/node_modules/typescript/lib"
+    "typescript.tsdk": "📦 Workspace/node_modules/typescript/lib",
+    "yaml.schemas": {
+      "./workflow.schema.json": [
+        "*.workflow.discovery.yaml",
+        "*.workflow.discovery.yml"
+      ],
+      "./task.schema.json": ["*.task.discovery.yaml", "*.task.discovery.yml"]
+    }
   },
   "extensions": {
     "recommendations": [
@@ -78,7 +85,9 @@
       "esbenp.prettier-vscode",
       "dbaeumer.vscode-eslint",
       "blanu.vscode-styled-jsx",
-      "ms-vscode.vscode-typescript-next"
+      "ms-vscode.vscode-typescript-next",
+      /* yaml */
+      "redhat.vscode-yaml"
     ]
   }
 }
