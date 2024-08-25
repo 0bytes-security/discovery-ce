@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'apps/api/routes/*.py'
+      - 'apps/api/**.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -66,10 +66,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
-          ref: docs
+          ref: main
       - name: Move OpenAPI JSON to PR branch
         run: |
-          cp ${{runner.temp}}/openapi.json ./src/openapi.json
+          cp ${{runner.temp}}/openapi.json ./docs/src/openapi.json
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c #v6.10
         with:

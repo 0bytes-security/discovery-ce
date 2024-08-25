@@ -1,0 +1,35 @@
+---
+export interface Props {
+  text: string;
+  icon: string;
+  colors?: {
+    label?: string;
+    version?: string;
+    logo?: string;
+  };
+  version?: string;
+}
+
+const { text, icon, version, colors = {} } = Astro.props;
+
+const defaultColors = {
+  label: "555",
+  version: "brightgreen",
+  logo: "white",
+};
+
+const finalColors = { ...defaultColors, ...colors };
+
+const imageURL =
+  version === undefined
+    ? `https://img.shields.io/badge/${encodeURIComponent(text)}-${finalColors.label}`
+    : `https://img.shields.io/badge/${encodeURIComponent(text)}-${encodeURIComponent(version)}-${finalColors.version}`;
+---
+
+<span>
+  <img
+    role="img"
+    alt={text}
+    src={`${imageURL}?logo=${encodeURIComponent(icon)}&labelColor=${encodeURIComponent(finalColors.label)}&logoColor=${encodeURIComponent(finalColors.logo)}`}
+  />
+</span>

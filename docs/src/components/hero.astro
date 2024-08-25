@@ -1,0 +1,185 @@
+---
+interface Props extends StarlightRouteData {}
+import CallToAction from "@astrojs/starlight/components/CallToAction.astro";
+import { Badge } from '@astrojs/starlight/components';
+
+import { PAGE_TITLE_ID } from "node_modules/@astrojs/starlight/constants";
+import type { StarlightRouteData } from "node_modules/@astrojs/starlight/utils/route-data";
+import Logo from "./logo.astro";
+
+const { data } = Astro.props.entry;
+const { title = data.title, tagline, image, actions = [] } = data.hero || {};
+---
+
+<div class="hero">
+  <div class="hero-html sl-flex">
+    <svg fill="none" role="img"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aspect-raio version="1.0">
+      <defs>
+        <clipPath id="5336ef8efb">
+          <path
+            stroke="red"
+            d="M 1.039062 86 L 61 86 L 61 94 L 1.039062 94 Z M 1.039062 86 "
+            clip-rule="nonzero"></path>
+        </clipPath>
+        <clipPath id="ccb40bf49f">
+          <path
+            d="M 1.039062 33 L 8 33 L 8 94.003906 L 1.039062 94.003906 Z M 1.039062 33 "
+            clip-rule="nonzero"></path>
+        </clipPath>
+      </defs>
+      <g fill-opacity="1">
+        <g transform="translate(19.269332, 64.837475)">
+          <g
+            class="discovery-svg-icon fill-accent-600 dark:fill-accent-200 stroke-none"
+          >
+            <path
+              d="M 21.265625 -18.40625 C 21.265625 -17.445312 20.929688 -16.628906 20.265625 -15.953125 C 19.609375 -15.273438 18.785156 -14.9375 17.796875 -14.9375 C 16.835938 -14.9375 16.019531 -15.273438 15.34375 -15.953125 C 14.664062 -16.628906 14.328125 -17.445312 14.328125 -18.40625 C 14.328125 -19.382812 14.664062 -20.210938 15.34375 -20.890625 C 16.019531 -21.578125 16.835938 -21.921875 17.796875 -21.921875 C 18.785156 -21.921875 19.609375 -21.578125 20.265625 -20.890625 C 20.929688 -20.210938 21.265625 -19.382812 21.265625 -18.40625 Z M 35.59375 -18.546875 C 35.59375 -16.234375 35.222656 -13.972656 34.484375 -11.765625 C 33.742188 -9.554688 32.632812 -7.566406 31.15625 -5.796875 C 29.675781 -4.023438 27.828125 -2.613281 25.609375 -1.5625 C 23.390625 -0.519531 20.800781 0 17.84375 0 C 14.851562 0 12.238281 -0.519531 10 -1.5625 C 7.769531 -2.613281 5.914062 -4.023438 4.4375 -5.796875 C 2.957031 -7.566406 1.847656 -9.554688 1.109375 -11.765625 C 0.367188 -13.972656 0 -16.234375 0 -18.546875 C 0 -20.847656 0.367188 -23.09375 1.109375 -25.28125 C 1.847656 -27.476562 2.957031 -29.453125 4.4375 -31.203125 C 5.914062 -32.960938 7.769531 -34.363281 10 -35.40625 C 12.238281 -36.457031 14.851562 -36.984375 17.84375 -36.984375 C 20.800781 -36.984375 23.390625 -36.457031 25.609375 -35.40625 C 27.828125 -34.363281 29.675781 -32.960938 31.15625 -31.203125 C 32.632812 -29.453125 33.742188 -27.476562 34.484375 -25.28125 C 35.222656 -23.09375 35.59375 -20.847656 35.59375 -18.546875 Z M 28.671875 -18.40625 C 28.671875 -19.914062 28.4375 -21.382812 27.96875 -22.8125 C 27.507812 -24.25 26.832031 -25.546875 25.9375 -26.703125 C 25.039062 -27.859375 23.914062 -28.773438 22.5625 -29.453125 C 21.207031 -30.128906 19.632812 -30.46875 17.84375 -30.46875 C 16.03125 -30.46875 14.441406 -30.128906 13.078125 -29.453125 C 11.722656 -28.773438 10.59375 -27.859375 9.6875 -26.703125 C 8.78125 -25.546875 8.101562 -24.25 7.65625 -22.8125 C 7.207031 -21.382812 6.984375 -19.914062 6.984375 -18.40625 C 6.984375 -16.925781 7.207031 -15.472656 7.65625 -14.046875 C 8.101562 -12.628906 8.78125 -11.347656 9.6875 -10.203125 C 10.59375 -9.066406 11.722656 -8.160156 13.078125 -7.484375 C 14.441406 -6.804688 16.03125 -6.46875 17.84375 -6.46875 C 19.632812 -6.46875 21.207031 -6.804688 22.5625 -7.484375 C 23.914062 -8.160156 25.039062 -9.066406 25.9375 -10.203125 C 26.832031 -11.347656 27.507812 -12.628906 27.96875 -14.046875 C 28.4375 -15.472656 28.671875 -16.925781 28.671875 -18.40625 Z M 28.671875 -18.40625 "
+            ></path>
+          </g>
+        </g>
+      </g>
+      <g class="stroke-accent-600 dark:stroke-accent-200">
+        <path
+          stroke-linecap="butt"
+          transform="matrix(-0.660388, 0, 0, -0.660388, 76.083629, 6.603881)"
+          stroke-linejoin="miter"
+          d="M 0.00241999 5.001756 L 84.434303 5.001756 "
+          stroke-width="10"
+          stroke-opacity="1"
+          stroke-miterlimit="4"></path>
+        <path
+          stroke-linecap="butt"
+          transform="matrix(0, -0.660388, 0.660388, 0, 69.48379, 56.435609)"
+          fill="none"
+          stroke-linejoin="miter"
+          d="M -0.00286327 4.99913 L 82.465212 4.99913 "
+          stroke-width="10"
+          stroke-opacity="1"
+          stroke-miterlimit="4"></path>
+      
+      <g clip-path="url(#5336ef8efb)">
+        <path
+          stroke-linecap="butt"
+          transform="matrix(0.660388, 0, 0, 0.660388, 1.038165, 86.657547)"
+          fill="none"
+          stroke-linejoin="miter"
+          d="M 0.00135924 5.002195 L 84.433242 5.002195 "
+          stroke-width="10"
+          stroke-opacity="1"
+          stroke-miterlimit="4"></path>
+      </g>
+      <g clip-path="url(#ccb40bf49f)">
+        <path
+          stroke-linecap="butt"
+          transform="matrix(0, 0.660388, -0.660388, 0, 7.63866, 36.825822)"
+          fill="none"
+          stroke-linejoin="miter"
+          d="M -0.00242735 5.001184 L 82.465648 5.001184 "
+          stroke-width="10"
+          stroke-opacity="1"
+          stroke-miterlimit="4"></path>
+      </g>
+    </g>
+    </svg>
+  </div>
+  <div class="sl-flex stack">
+    <div class="sl-flex copy">
+      <h1 id={PAGE_TITLE_ID} data-page-title set:html={title} />
+      {tagline && <div class="tagline" set:html={tagline} />}
+    </div>
+    {
+      actions.length > 0 && (
+        <div class="sl-flex actions">
+          {actions.map(({ text, ...attrs }) => (
+            <CallToAction {...attrs} set:html={text} />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .hero {
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero > img,
+  .hero > .hero-html {
+    object-fit: contain;
+    width: min(70%, 20rem);
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .stack {
+    flex-direction: column;
+    gap: clamp(1.5rem, calc(1.5rem + 1vw), 2rem);
+    text-align: center;
+  }
+
+  .copy {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .copy > * {
+    max-width: 50ch;
+  }
+
+  h1 {
+    font-size: clamp(
+      var(--sl-text-3xl),
+      calc(0.25rem + 5vw),
+      var(--sl-text-6xl)
+    );
+    line-height: var(--sl-line-height-headings);
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  .tagline {
+    font-size: clamp(
+      var(--sl-text-base),
+      calc(0.0625rem + 2vw),
+      var(--sl-text-xl)
+    );
+    color: var(--sl-color-gray-2);
+  }
+
+  .actions {
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (min-width: 50rem) {
+    .hero {
+      grid-template-columns: 7fr 4fr;
+      gap: 3%;
+      padding-block: clamp(2.5rem, calc(1rem + 10vmin), 10rem);
+    }
+
+    .hero > img,
+    .hero > .hero-html {
+      order: 2;
+      width: min(100%, 25rem);
+    }
+
+    .stack {
+      text-align: start;
+    }
+
+    .copy {
+      align-items: flex-start;
+    }
+
+    .actions {
+      justify-content: flex-start;
+    }
+  }
+</style>

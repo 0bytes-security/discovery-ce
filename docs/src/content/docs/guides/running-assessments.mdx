@@ -1,0 +1,52 @@
+---
+title: "Running Assessments with Discovery"
+editUrl: https://github.com/0bytes-security/discovery-ce/edit/docs/src/content/docs/guides/running-assessments.mdx
+---
+
+This guide explains how to initiate and manage security assessments using Discovery.
+
+## Task Registration
+
+Before you can run assessments, you need to register the tasks (security tools) you want to use. Refer to the [**Task Integration**](/guides/task-integration) guide for details on defining and registering tasks using the schema-based approach. 
+
+## Accessing the User Interface
+
+1. Open your web browser and navigate to the address where your Discovery frontend is running (usually `http://localhost:3000` for development).
+2. Log in to the platform.
+
+## Exploring the UI
+
+Familiarize yourself with the Discovery user interface:
+
+- **Tasks:** You should have a section for viewing and managing registered tasks. 
+- **Assessments:**  This section allows you to create new assessments and view the results of previous assessments.
+- **Workflows (Optional):** If you have implemented workflow functionality, there might be a section for creating, managing, and running workflows.
+
+## Initiating an Assessment
+
+1. **Create a New Assessment:**  In the assessments section, click on "Create New Assessment" (or a similar button).
+2. **Select a Task:**  Choose the task you want to execute from the list of registered tasks. The UI should display the task's name and description. 
+3. **Configure Parameters:**  Enter the required parameters for the selected task. The UI should guide you with input fields based on the task's defined schema.  
+4. **(Optional) Set Variables:**  If your task is part of a workflow that uses variables, provide the values for these variables. 
+5. **Start the Assessment:** Click the "Start" or "Run" button to initiate the assessment. 
+
+## Monitoring Progress
+
+- **Real-time Updates:**  The UI should display real-time updates about the assessment's progress, including:
+    - Task status (pending, running, completed, failed).
+    - Progress indicators.
+    - Any output or findings from the tool in real-time (if the tool provides it).
+- **Notifications:** Discovery may use WebSockets and/or Pusher to send real-time updates and notifications.
+
+## Viewing Results
+
+- **Assessment Details:**  Once the assessment is complete, the UI will typically provide a detailed view of the assessment run. 
+- **Results Data:**  The UI will display the results from the security tool. The format of the results will depend on the tool used. 
+- **Files:** If the assessment generated files (e.g., reports, log files), you should be able to download them from the UI.
+
+## Troubleshooting
+
+- **Error Messages:**  If an error occurs during the assessment, the UI should display an error message. Check the error message for clues about the problem.
+- **Logs:** Review the logs for the backend API and Celery workers to get more detailed information about the error. 
+- **GitHub Discussions:**  If you're unable to resolve the error, search for similar issues on [GitHub Discussions](https://github.com/0bytes-security/discovery-ce/discussions) or create a new discussion describing the problem.
+

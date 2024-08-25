@@ -1,0 +1,128 @@
+---
+title: "Installation and Setup: Get Discovery Running"
+editUrl: https://github.com/0bytes-security/discovery-ce/edit/docs/src/content/docs/getting-started/installation.mdx
+---
+
+Welcome to Discovery!  This guide walks you through the steps for setting up the platform and running your first security assessment. 
+
+## Prerequisites
+
+Make sure you have the following installed on your system:
+
+- **Docker:**  [https://www.docker.com/](https://www.docker.com/)
+- **Python 3.12:** [https://www.python.org/](https://www.python.org/) 
+- **Poetry (Python Package Manager):** [https://python-poetry.org/](https://python-poetry.org/)
+- **Node.js:** [https://nodejs.org/](https://nodejs.org/)
+- **Nx (Monorepo Management):** [https://nx.dev/](https://nx.dev/)
+- **PostgreSQL:**  [https://www.postgresql.org/](https://www.postgresql.org/) 
+- **AWS Account:** (Optional - only if you want to use Amazon S3 for storage).
+- **Clerk Account:**  [https://clerk.com/](https://clerk.com/) (For user authentication).
+
+
+1. Clone the Repository
+
+    ```bash
+    git clone https://github.com/0bytes-security/discovery-ce.git
+    cd discovery-ce
+    ```
+
+2. Install Dependencies
+
+    ```bash
+    pnpm install
+    ```
+
+## Backend Setup
+
+1. Navigate to the Backend Directory
+
+    ```bash
+    cd apps/frontend
+    ```
+
+2. Install Backend Dependencies
+
+    ```bash
+    cd apps/api && poetry install 
+    ```
+
+3. Configure Environment Variables (`.env`)
+
+    In the `apps/api` directory, create a `.env` file based on the example provided in [`docker/api/.env.dev`](https://github.com/0bytes-security/discovery-ce/blob/main/docker/api/.env.dev). Configure the following essential environment variables:
+
+    ```env
+    # Database
+    DATABASE_URL="postgresql://user:password@host:port/database"  # Replace with your database details 
+
+    # Docker 
+    DOCKER_HOST="unix:///var/run/docker.sock" # Or your Docker host address if different
+    DOCKER_ALLOWED_IMAGES="projectdiscovery/subfinder:latest,projectdiscovery/httpx:latest,..." # Add other allowed images 
+    DOCKER_VOLUMES_PATH="/path/to/your/volumes" # Directory for storing container volumes 
+
+    # (Optional)  Amazon S3 Configuration (for storage)
+    AWS_S3_ENDPOINT="..." # Your S3 endpoint (e.g., for MinIO, use the MinIO server address)
+    AWS_S3_ACCESS_KEY_ID="..." # Your S3 access key ID
+    AWS_S3_SECRET_ACCESS_KEY="..." # Your S3 secret access key
+    AWS_S3_BUCKET_NAME="discovery-ce-bucket"  # Your S3 bucket name 
+
+    # (Optional) Pusher Configuration (for real-time notifications)
+    PUSHER_APP_ID="..." # Your Pusher app ID
+    PUSHER_KEY="..." # Your Pusher key
+    PUSHER_SECRET="..." # Your Pusher secret
+    PUSHER_CLUSTER="..." # Your Pusher cluster
+
+    ```
+
+    **Notes:**
+    - **Docker Allowed Images:** In `DOCKER_ALLOWED_IMAGES`, you need to specify the Docker images for all the security tools you want to integrate. Discovery enforces restrictions on allowed images for security.  
+    - **Amazon S3:**  You only need to configure S3 settings if you want to use S3 for storing assessment results and logs.
+    - **Pusher:** Only configure Pusher if you intend to use it for real-time notifications in addition to WebSockets.
+
+
+4. Run the Backend Development Server
+
+    ```bash
+    poetry run uvicorn discovery.app:app --reload
+    ```
+
+    Now, your backend API server should be running at [http://localhost:8000](http://localhost:8000).
+
+## Frontend Setup
+
+1. Navigate to the Frontend Directory
+
+    ```bash
+    cd apps/frontend
+    ```
+2. Set your environment variables
+
+    In the `apps/frontend` directory, create a `.env.local` Configure the following essential environment variables:
+
+    ```env
+    # Clerk Configuration
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+    CLERK_SECRET_KEY=
+    # Keep these in .env.local
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/auth/signin
+    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/auth/signup
+    ```
+
+3. Run the Frontend Development Server
+
+    ```bash
+    pnpm dev
+    ```
+    Now, your backend API server should be running at [http://localhost:3000](http://localhost:3000).
+
+4. Running Your First Assessment 
+
+    1. **Login/Register:** Access yourDiscovery frontend application in your web browser and create an account using Clerk.
+    2. **Explore the Interface:** Familiarize yourself with the UI.  You'll usually find sections to manage tasks, create assessments, choose tools, configure parameters, and view results.
+    3. **Register a Task:** Use the `POST /tasks` API endpoint (or the UI if implemented) to upload a task schema in JSON or YAML format.
+    4. **Create Assessment:** Define your first assessment, specifying the target domain or IP, selecting the registered task, and providing any necessary parameters.
+    5. **Run and Monitor:** Initiate the assessment.  You should see real-time updates about the assessment progress on your screen, delivered via WebSockets.
+    6. **View Results:** After the assessment completes, you can access and analyze the results through the frontend UI.
+
+    **Notes:**
+    - The frontend is under development, only authentication is ready with profile edit.
+    

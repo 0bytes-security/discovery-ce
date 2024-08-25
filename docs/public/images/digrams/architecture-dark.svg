@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css"?>
+<svg aria-roledescription="flowchart-v2" role="graphics-document document"
+    viewBox="-8 -8 1978.6165771484375 736.7166748046875" style="max-width: 100%;" xmlns="http://www.w3.org/2000/svg"
+    width="100%" id="digram" height="100%" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        :root {
+            --sl-color-accent-low: #3d1611;
+            --sl-color-accent: #bd291b;
+            --sl-color-accent-high: #eebab1;
+            --sl-color-white: #ffffff;
+            --sl-color-gray-1: #f3ecea;
+            --sl-color-gray-2: #c8c0be;
+            --sl-color-gray-3: #978784;
+            --sl-color-gray-4: #635451;
+            --sl-color-gray-5: #423432;
+            --sl-color-gray-6: #302321;
+            --sl-color-black: #1d1715;
+        }
+        
+        #digram {
+            font-family: "trebuchet ms", verdana, arial, sans-serif;
+            font-size: 16px;
+        }
+
+        #digram svg {
+            font-family: "trebuchet ms", verdana, arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .edge-thickness-normal {
+            stroke-width: 2px;
+        }
+
+        .edge-pattern-solid {
+            stroke-dasharray: 0;
+        }
+
+        .edge-pattern-dotted {
+            stroke-dasharray: 2;
+        }
+
+        .marker {
+            fill: var(--sl-color-accent);
+            stroke: var(--sl-color-accent);
+        }
+
+        .marker.cross {
+            stroke: var(--sl-color-accent);
+        }
+
+        .label {
+            font-family: "trebuchet ms", verdana, arial, sans-serif;
+            color: var(--sl-color-gray-1);
+        }
+
+        .cluster span,
+        .cluster-label span {
+            color: var(--sl-color-gray-1);
+        }
+
+        span {
+            color: var(--sl-color-white);
+        }
+
+        .node circle,
+        .node path,
+        .node polygon,
+        .node rect {
+            fill: var(--sl-color-accent);
+            stroke: var(--sl-color-accent);
+            stroke-width: 1px;
+        }
+
+        .node .label {
+            text-align: center;
+        }
+
+        .flowchart-link {
+            stroke: var(--sl-color-accent);
+            fill: none;
+        }
+
+        .edgeLabel {
+            background-color: none;
+            text-align: center;
+        }
+
+        .edgeLabel rect {
+            opacity: 1.5;
+            background-color: var(--sl-color-accent);
+            fill: var(--sl-color-gray-6);
+        }
+
+        .cluster rect {
+            fill: var(--sl-color-gray-5);
+            stroke: rgba(255, 255, 255, 0.25);
+            stroke-width: 1px;
+        }
+
+        .flowchartTitleText {
+            text-anchor: middle;
+            font-size: 18px;
+        }
+
+        #digram :root {
+            --mermaid-font-family: "trebuchet ms", verdana, arial, sans-serif;
+        }
+    </style>
+    <g>
+        <marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="6"
+            viewBox="0 0 10 10" class="marker flowchart" id="digram_flowchart-pointEnd">
+            <path style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath"
+                d="M 0 0 L 10 5 L 0 10 z"></path>
+        </marker>
+        <marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="4.5"
+            viewBox="0 0 10 10" class="marker flowchart" id="digram_flowchart-pointStart">
+            <path style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath"
+                d="M 0 5 L 10 10 L 10 0 z"></path>
+        </marker>
+        <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11"
+            viewBox="0 0 10 10" class="marker flowchart" id="digram_flowchart-circleEnd">
+            <circle style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" r="5" cy="5" cx="5">
+            </circle>
+        </marker>
+        <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1"
+            viewBox="0 0 10 10" class="marker flowchart" id="digram_flowchart-circleStart">
+            <circle style="stroke-width: 1px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath" r="5" cy="5" cx="5">
+            </circle>
+        </marker>
+        <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12"
+            viewBox="0 0 11 11" class="marker cross flowchart" id="digram_flowchart-crossEnd">
+            <path style="stroke-width: 2px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath"
+                d="M 1,1 l 9,9 M 10,1 l -9,9"></path>
+        </marker>
+        <marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1"
+            viewBox="0 0 11 11" class="marker cross flowchart" id="digram_flowchart-crossStart">
+            <path style="stroke-width: 2px; stroke-dasharray: 1px, 0px;" class="arrowMarkerPath"
+                d="M 1,1 l 9,9 M 10,1 l -9,9"></path>
+        </marker>
+        <g class="root">
+            <g class="clusters">
+                <g id="subGraph2" class="cluster default flowchart-label">
+                    <rect height="211.4499969482422" width="1393.9499816894531" y="435.2666702270508"
+                        x="568.6666564941406" ry="0" rx="0" style=""></rect>
+                    <g transform="translate(1203.6083145141602, 435.2666702270508)" class="cluster-label">
+                        <foreignObject height="24" width="124.06666564941406">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Optional
+                                    Services</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g id="Tools" class="cluster default flowchart-label">
+                    <rect height="214" width="502.34999084472656" y="201.26667022705078" x="1293.316650390625" ry="0"
+                        rx="0" style=""></rect>
+                    <g transform="translate(1539.258316040039, 201.26667022705078)" class="cluster-label">
+                        <foreignObject height="24" width="50">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Tools</span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g id="Frontend" class="cluster default flowchart-label">
+                    <rect height="198" width="379.1999969482422" y="486.4916687011719" x="0" ry="0" rx="0" style="">
+                    </rect>
+                    <g transform="translate(157.25, 486.4916687011719)" class="cluster-label">
+                        <foreignObject height="24" width="64.69999694824219">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span
+                                    class="nodeLabel">Frontend</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+            </g>
+            <g class="edgePaths">
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" id="L-A-B-0"
+                    d="M119.251,565.992L127.015,561.825C134.778,557.658,150.306,549.325,166.913,545.158C183.519,540.992,201.206,540.992,210.049,540.992L218.892,540.992">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-Z" id="L-A-Z-0"
+                    d="M119.251,604.992L127.015,609.158C134.778,613.325,150.306,621.658,161.353,625.825C172.4,629.992,178.967,629.992,182.25,629.992L185.533,629.992">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-C" id="L-B-C-0"
+                    d="M320.842,540.992L330.568,540.992C340.294,540.992,359.747,540.992,385.262,540.992C410.778,540.992,442.356,540.992,473.933,540.992C505.511,540.992,537.089,540.992,556.245,541.058C575.4,541.124,582.134,541.256,585.501,541.322L588.868,541.388">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-D" id="L-C-D-0"
+                    d="M716.457,522.332L731.49,516.631C746.524,510.931,776.591,499.53,814.213,439.756C851.835,379.983,897.012,271.836,919.601,217.763L942.189,163.689">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-E" id="L-D-E-0"
+                    d="M1038.793,118.707L1047.116,121.8C1055.44,124.894,1072.087,131.08,1083.693,134.173C1095.3,137.267,1101.867,137.267,1105.15,137.267L1108.433,137.267">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-F" id="L-D-F-0"
+                    d="M1038.793,67.826L1047.116,64.566C1055.44,61.306,1072.087,54.787,1083.693,51.527C1095.3,48.267,1101.867,48.267,1105.15,48.267L1108.433,48.267">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-G" id="L-E-G-0"
+                    d="M1243.317,137.267L1247.483,137.267C1251.65,137.267,1259.983,137.267,1268.317,137.267C1276.65,137.267,1284.983,137.267,1297.244,133.915C1309.505,130.563,1325.693,123.859,1333.787,120.507L1341.881,117.155">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-F LE-G" id="L-F-G-0"
+                    d="M1243.317,48.267L1247.483,48.267C1251.65,48.267,1259.983,48.267,1268.317,48.267C1276.65,48.267,1284.983,48.267,1297.249,51.772C1309.516,55.278,1325.714,62.289,1333.814,65.795L1341.913,69.301">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-I LE-J" id="L-I-J-0"
+                    d="M1476.517,271.767L1488.642,271.767C1500.767,271.767,1525.017,271.767,1548.388,270.543C1571.76,269.32,1594.254,266.873,1605.501,265.649L1616.748,264.426">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-K LE-L" id="L-K-L-0"
+                    d="M1462.333,360.767L1476.822,360.767C1491.311,360.767,1520.289,360.767,1546.019,360.767C1571.75,360.767,1594.233,360.767,1605.475,360.767L1616.717,360.767">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-M" id="L-C-M-0"
+                    d="M718.414,558.694L733.122,563.364C747.829,568.035,777.244,577.376,813.947,597.375C850.651,617.373,894.643,648.03,916.639,663.358L938.636,678.686">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)"
+                    style="fill:none;stroke-width:2px;stroke-dasharray:3;"
+                    class="edge-thickness-normal edge-pattern-dotted flowchart-link LS-J LE-N" id="L-J-N-0"
+                    d="M1770.667,255.767L1774.833,255.767C1779,255.767,1787.333,255.767,1795.667,303.304C1804,350.842,1812.333,445.917,1819.783,493.454C1827.233,540.992,1833.8,540.992,1837.083,540.992L1840.367,540.992">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)"
+                    style="fill:none;stroke-width:2px;stroke-dasharray:3;"
+                    class="edge-thickness-normal edge-pattern-dotted flowchart-link LS-C LE-O" id="L-C-O-0"
+                    d="M733.332,539.207L745.553,538.712C757.774,538.218,782.216,537.23,815.701,536.736C849.186,536.242,891.714,536.242,912.978,536.242L934.242,536.242">
+                </path>
+                <path marker-end="url(#digram_flowchart-pointEnd)" style="fill:none;"
+                    class="edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-Tools" id="L-G-Tools-0"
+                    d="M1470.417,162.834L1506.634,197.597"></path>
+            </g>
+            <g class="edgeLabels">
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(473.9333267211914, 540.9916687011719)" class="edgeLabel">
+                    <g transform="translate(-69.73332977294922, -12)" class="label">
+                        <foreignObject height="24" width="139.46665954589844">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">tRPC &amp;
+                                    WebSockets</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(1549.2666473388672, 271.7666702270508)" class="edgeLabel">
+                    <g transform="translate(-47.75, -12)" class="label">
+                        <foreignObject height="24" width="95.5">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span
+                                    class="edgeLabel">Input/Output</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(1549.2666473388672, 360.7666702270508)" class="edgeLabel">
+                    <g transform="translate(-47.75, -12)" class="label">
+                        <foreignObject height="24" width="95.5">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span
+                                    class="edgeLabel">Input/Output</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(806.658317565918, 586.716667175293)" class="edgeLabel">
+                    <g transform="translate(-46.541664123535156, -12)" class="label">
+                        <foreignObject height="24" width="93.08332824707031">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">Tortoise
+                                    ORM</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g class="edgeLabel">
+                    <g transform="translate(0, 0)" class="label">
+                        <foreignObject height="0" width="0">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span>
+                            </div>
+                        </foreignObject>
+                    </g>
+                </g>
+            </g>
+            <g class="nodes">
+                <g transform="translate(1891.6416397094727, 540.9916687011719)" data-id="N" data-node="true"
+                    id="flowchart-N-28222" class="node default default flowchart-label">
+                    <rect height="39" width="91.94999694824219" y="-19.5" x="-45.974998474121094" ry="0" rx="0" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-38.474998474121094, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="76.94999694824219">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Amazon
+                                    S3</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(970.9666519165039, 536.2416687011719)" data-id="O" data-node="true"
+                    id="flowchart-O-28224" class="node default default flowchart-label">
+                    <rect height="39" width="62.850006103515625" y="-19.5" x="-31.425003051757812" ry="0" rx="0"
+                        style="" class="basic label-container"></rect>
+                    <g transform="translate(-23.925003051757812, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="47.850006103515625">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span
+                                    class="nodeLabel">Pusher</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(664.3916549682617, 540.9916687011719)" data-id="C" data-node="true"
+                    id="flowchart-C-28202" class="node default default flowchart-label">
+                    <polygon style="" transform="translate(-70.7249984741211,70.7249984741211)" class="label-container"
+                        points="70.7249984741211,0 141.4499969482422,-70.7249984741211 70.7249984741211,-141.4499969482422 0,-70.7249984741211">
+                    </polygon>
+                    <g transform="translate(-43.724998474121094, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="87.44999694824219">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Backend
+                                    API</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(1696.3416442871094, 255.76667022705078)" data-id="J" data-node="true"
+                    id="flowchart-J-28216" class="node default default flowchart-label">
+                    <rect height="39" width="148.64999389648438" y="-19.5" x="-74.32499694824219" ry="5" rx="5" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-66.82499694824219, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="133.64999389648438">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Container
+                                    Volumes</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(1397.416648864746, 271.7666702270508)" data-id="I" data-node="true"
+                    id="flowchart-I-28215" class="node default default flowchart-label">
+                    <rect height="39" width="158.1999969482422" y="-19.5" x="-79.0999984741211" ry="0" rx="0" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-71.5999984741211, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="143.1999969482422">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Subfinder
+                                    Container</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(1696.3416442871094, 360.7666702270508)" data-id="L" data-node="true"
+                    id="flowchart-L-28218" class="node default default flowchart-label">
+                    <rect height="39" width="148.64999389648438" y="-19.5" x="-74.32499694824219" ry="5" rx="5" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-66.82499694824219, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="133.64999389648438">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Container
+                                    Volumes</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(1397.416648864746, 360.7666702270508)" data-id="K" data-node="true"
+                    id="flowchart-K-28217" class="node default default flowchart-label">
+                    <rect height="39" width="129.8333282470703" y="-19.5" x="-64.91666412353516" ry="0" rx="0" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-57.416664123535156, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="114.83332824707031">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Httpx
+                                    Container</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(272.51666259765625, 540.9916687011719)" data-id="B" data-node="true"
+                    id="flowchart-B-28198" class="node default default flowchart-label">
+                    <rect height="39" width="96.64999389648438" y="-19.5" x="-48.32499694824219" ry="0" rx="0" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-40.82499694824219, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="81.64999389648438">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">tRPC
+                                    Client</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(82.91666412353516, 585.4916687011719)" data-id="A" data-node="true"
+                    id="flowchart-A-28197" class="node default default flowchart-label">
+                    <rect height="39" width="115.83332824707031" y="-19.5" x="-57.916664123535156" ry="0" rx="0"
+                        style="" class="basic label-container"></rect>
+                    <g transform="translate(-50.416664123535156, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="100.83332824707031">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Web
+                                    Interface</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(272.51666259765625, 629.9916687011719)" data-id="Z" data-node="true"
+                    id="flowchart-Z-28200" class="node default default flowchart-label">
+                    <rect height="39" width="163.36666870117188" y="-19.5" x="-81.68333435058594" ry="5" rx="5" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-74.18333435058594, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="148.36666870117188">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Clerk
+                                    Authentication</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(970.9666519165039, 92.76667022705078)" data-id="D" data-node="true"
+                    id="flowchart-D-28204" class="node default default flowchart-label">
+                    <polygon style="" transform="translate(-92.76667022705078,92.76667022705078)"
+                        class="label-container"
+                        points="92.76667022705078,0 185.53334045410156,-92.76667022705078 92.76667022705078,-185.53334045410156 0,-92.76667022705078">
+                    </polygon>
+                    <g transform="translate(-65.76667022705078, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="131.53334045410156">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Celery Task
+                                    Queue</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(1178.5249862670898, 137.26667022705078)" data-id="E" data-node="true"
+                    id="flowchart-E-28206" class="node default default flowchart-label">
+                    <rect height="39" width="129.5833282470703" y="-19.5" x="-64.79166412353516" ry="0" rx="0" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-57.291664123535156, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="114.58332824707031">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Celery
+                                    Worker 1</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(1178.5249862670898, 48.26667022705078)" data-id="F" data-node="true"
+                    id="flowchart-F-28208" class="node default default flowchart-label">
+                    <rect height="39" width="129.5833282470703" y="-19.5" x="-64.79166412353516" ry="0" rx="0" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-57.291664123535156, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="114.58332824707031">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Celery
+                                    Worker 2</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(1397.416648864746, 92.76667022705078)" data-id="G" data-node="true"
+                    id="flowchart-G-28210" class="node default default flowchart-label">
+                    <polygon style="" transform="translate(-73,73)" class="label-container"
+                        points="73,0 146,-73 73,-146 0,-73"></polygon>
+                    <g transform="translate(-46, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="92">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Task
+                                    Registry</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+                <g transform="translate(970.9666519165039, 701.216667175293)" data-id="M" data-node="true"
+                    id="flowchart-M-28220" class="node default default flowchart-label">
+                    <rect height="39" width="164.51666259765625" y="-19.5" x="-82.25833129882812" ry="0" rx="0" style=""
+                        class="basic label-container"></rect>
+                    <g transform="translate(-74.75833129882812, -12)" style="" class="label">
+                        <rect></rect>
+                        <foreignObject height="24" width="149.51666259765625">
+                            <div xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">PostgreSQL
+                                    Database</span></div>
+                        </foreignObject>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

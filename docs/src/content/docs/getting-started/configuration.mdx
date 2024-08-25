@@ -1,0 +1,61 @@
+---
+title: "Configuration: Fine-tuning Discovery"
+editUrl: https://github.com/0bytes-security/discovery-ce/edit/docs/src/content/docs/getting-started/configuration.mdx
+---
+
+This guide explains the main configuration options for Discovery. The primary configuration is handled through environment variables in the backend's `.env` file.
+
+## Backend Configuration (`.env` File) 
+
+The `.env` file in the `apps/api` directory contains the following important environment variables:
+
+* **`DATABASE_URL`:**
+   - The connection string to your PostgreSQL database.
+   - Format:  `postgresql://user:password@host:port/database`
+   - **Example:** `DATABASE_URL="postgresql://discovery:password@localhost:5432/discovery_db"`
+* **`DOCKER_HOST`:** 
+   - The address of your Docker host.
+   - Usually, it's `unix:///var/run/docker.sock` if you're running Docker directly on your machine.
+   - If you're using a remote Docker host or a different socket, adjust the value accordingly. 
+* **`DOCKER_ALLOWED_IMAGES`:** 
+    - **Crucial for security!** 
+    - A comma-separated list of Docker images that are allowed to be executed by Discovery.  
+    - Only specify the images for the tools you want to use. 
+    - **Example:** `DOCKER_ALLOWED_IMAGES="projectdiscovery/subfinder:latest,instrumentisto/nmap:latest"`
+* **`DOCKER_VOLUMES_PATH`:**
+    - The directory on your host machine where container volumes will be stored. 
+    - Choose a location with sufficient disk space.
+    - **Example:** `DOCKER_VOLUMES_PATH="/data/discovery_volumes"`
+* **Amazon S3 Configuration (Optional):**
+    - `AWS_S3_ENDPOINT`:  Your S3-compatible service endpoint.
+    - `AWS_S3_ACCESS_KEY_ID`: Your S3 access key ID.
+    - `AWS_S3_SECRET_ACCESS_KEY`: Your S3 secret access key.
+    - `AWS_S3_BUCKET_NAME`: The name of your S3 bucket. 
+    - `AWS_S3_VERIFY_SSL`: Set to `False` if your S3 endpoint is not using HTTPS. 
+* **Pusher Configuration (Optional):**
+    - `PUSHER_APP_ID`: Your Pusher application ID.
+    - `PUSHER_KEY`: Your Pusher key. 
+    - `PUSHER_SECRET`: Your Pusher secret.
+    - `PUSHER_CLUSTER`: Your Pusher cluster.
+
+## Frontend Configuration
+
+The majority of the frontend configuration is handled within the Next.js application:
+
+- **Clerk Configuration:**
+    - Update the placeholder values with your Clerk API keys in the `.env.local` file:
+  
+    ```env
+    # Clerk Configuration
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+    CLERK_SECRET_KEY=
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/auth/signin
+    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/auth/signup
+    ```
+  
+- **tRPC Endpoints:**
+    - The tRPC router in your Next.js application defines the endpoints for interacting with the backend API.
+  
+- **Styling and Themes:**
+    - Customize the UI using Tailwind CSS utility classes. Consider adding support for themes if needed.
+

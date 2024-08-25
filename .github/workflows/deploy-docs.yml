@@ -1,0 +1,69 @@
+name: Deploy Docs to GitHub Pages
+
+on:
+  # Trigger the workflow every time you push to the `docs` branch
+  # Using a different branch name? Replace `docs` with your branch’s name
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Automatically cancel in-progress actions on the same branch
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event_name == 'pull_request_target' && github.head_ref || github.ref }}
+    cancel-in-progress: true
+
+env:
+  ASTRO_TELEMETRY_DISABLED: true
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: Deploy documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+          version: 9
+
+      - name: Install dependencies
+        working-directory: docs
+        run: pnpm install
+
+      - name: Build website
+        working-directory: docs
+        run: |
+          pnpm build
+
+      - name: Upload artifact
+        
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./docs/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
