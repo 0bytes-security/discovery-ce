@@ -1,0 +1,112 @@
+---
+title:  Overview
+editUrl: https://github.com/0bytes-security/discovery-ce/edit/docs/src/content/docs/overview.mdx
+---
+
+import Badge from "~/components/shields-badge.astro";
+
+
+## Goals and Objectives
+
+Discovery aims to achieve the following goals:
+
+- **Simplify Security Assessments:**  The platform automates the execution of security tools, freeing users from manual setup and configuration tasks.
+- **Enable Easy Tool Integration:**  Discovery is built with a flexible and extensible architecture that allows security professionals to easily integrate their preferred tools.
+- **Provide Real-time Insights:** The platform provides real-time feedback on assessment progress through WebSockets and optional Pusher notifications, keeping users informed about findings and potential issues.
+- **Promote Collaboration:** Discovery fosters an open-source, collaborative environment, encouraging contributions and engagement from the security community to continuously enhance its features and capabilities.
+
+## Architecture
+
+Discovery's architecture is designed for flexibility, scalability, and ease of integration.  Here's a breakdown:
+
+### Frontend (Client-Side)
+
+<span class="flex flex-row space-x-2 my-5 mx-5">
+  <Badge text="Nextjs" icon="nextjs" version="14" />
+  <Badge text="Shadcn UI" icon="shadcnui" version="❤️" colors={{
+    version:"red"
+  }} />
+  <Badge text="Tailwind CSS" icon="tailwindcss" version="❤️" colors={{
+    version:"red"
+  }} />
+  <Badge text="Clerk" icon="clerk" version="❤️" colors={{
+    version:"red"
+  }} />
+  <Badge text="tRPC" icon="trpc" version="latest" />
+</span>
+
+
+- **Next.js 14:** This robust React framework provides the foundation for a modern, performant web interface. It offers features like server-side rendering (SSR), automatic static optimization, and a streamlined development process. 
+- **Shadcn UI:** This carefully curated React component library provides a sleek, consistent, and easy-to-use set of UI elements, enabling rapid development of a user-friendly frontend.
+- **Tailwind CSS:** This popular utility-first CSS framework facilitates styling the frontend with ease. It allows developers to create custom designs quickly by combining pre-defined CSS utility classes. 
+- **Clerk:** This user management platform provides secure and hassle-free authentication and authorization for Discovery. Clerk handles user registration, login, session management, and more.
+- **tRPC:** This end-to-end typesafe communication protocol is used for interaction between the Next.js frontend and the FastAPI backend. tRPC ensures type safety for API requests, reducing errors and providing an improved developer experience.
+
+### Backend (Server-Side)
+
+<span class="flex flex-row space-x-2 my-5 mx-5">
+  <Badge text="Python" icon="python" version="13.4" />
+  <Badge text="FastAPI" icon="fastapi" version="lastest" />
+  <Badge text="Celery" icon="celery" version="5.4.0" />
+  <Badge text="Pydantic" icon="pydantic" version="latest" />
+</span>
+
+- **FastAPI:** This modern, high-performance web framework for Python powers the Discovery backend API. FastAPI is known for its speed, built-in data validation, automatic API documentation (Swagger/OpenAPI), and excellent developer experience.
+- **Celery:**  A distributed task queue that manages asynchronous task processing, allowing for parallel execution and increased throughput for assessments.
+- **Task Registry (Database-Backed):** A dynamic registry system, now backed by a database, enables persistent storage of task schemas for seamless integration of new security tools. 
+- **Tortoise ORM:**  A Python Object-Relational Mapper (ORM) that provides a type-safe and efficient way to interact with the PostgreSQL database. Tortoise ORM abstracts away complex SQL queries, enabling developers to work with database entities as Python objects. 
+
+### Containerization & Storage
+<span class="flex flex-row space-x-2 my-5 mx-5">
+  <Badge text="Docker" icon="docker" version="rootless" />
+   <Badge text="Amazon S3" icon="amazons3" />
+</span>
+- **Docker:**  Provides isolated environments for secure tool execution.
+- **Container Volumes:** Manage input/output data for tools, including integration with Amazon S3 for persistent storage (optional).
+
+### Real-time Communication
+
+<span class="flex flex-row space-x-2 my-5 mx-5">
+  <Badge text="WebSockets" icon="socketdotio" />
+  <Badge text="Pusher" icon="pusher" />
+</span>
+
+- **WebSockets:** Enable bi-directional, real-time communication between the backend and the frontend for live updates.
+- **Pusher (Optional):** An additional channel for real-time notifications to keep users informed.
+
+### Schema-Driven Approach
+
+- **Task Schema:** A standardized JSON schema ([`task.schema.json`](https://github.com/0bytes-security/discovery-ce/blob/main/task.schema.json)) defines the structure and contents of task definitions. It includes fields for:
+    - `id`: Unique identifier for the task.
+    - `name`: Human-readable name.
+    - `description`: Details about the task.
+    - `image`: The Docker image to be used. 
+    - `parameters`:  Input parameters, their descriptions, data types, and validation rules.
+    - `command`:  The command template to run within the container, using placeholders for parameters and outputs.
+    - `outputs`:  Output data definitions and their expected formats.
+- **Workflow Schema:**  A JSON schema ([`workflow.schema.json`](https://github.com/0bytes-security/discovery-ce/blob/main/task.schema.json)) defines the structure of workflow files.  
+    - `version`: Workflow schema version
+    - `name`: Workflow name 
+    - `description`: Detailed description 
+    - `runs`: An array of task definitions. 
+    - `variables`:  A dictionary of reusable variables to be used within the workflow. 
+- **CLI Tool (`discovery-schema`):**  A command-line tool for:
+    - Generating JSON schemas for tasks and workflows. 
+    - Validating task and workflow schema files.
+- **VS Code Integration:** The Discovery code workspace is configured to provide YAML schema validation using the provided schemas.  This helps catch errors early during development.
+
+
+### Additional Resources 
+
+For further exploration, consult the official documentation for the technologies used in Discovery:
+
+- **FastAPI:**  [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
+- **Celery:** [https://docs.celeryproject.org/](https://docs.celeryproject.org/)
+- **Docker:** [https://docs.docker.com/](https://docs.docker.com/)
+- **Next.js:** [https://nextjs.org/](https://nextjs.org/)
+- **Shadcn UI:** [https://ui.shadcn.com/](https://ui.shadcn.com/)
+- **Tailwind CSS:** [https://tailwindcss.com/](https://tailwindcss.com/)
+- **Clerk:** [https://clerk.com/](https://clerk.com/)
+- **tRPC:** [https://trpc.io/](https://trpc.io/)
+- **Tortoise ORM:** [https://tortoise-orm.readthedocs.io/](https://tortoise-orm.readthedocs.io/)
+- **Nx:**  [https://nx.dev/](https://nx.dev/)

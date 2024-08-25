@@ -1,0 +1,152 @@
+---
+import { CardGrid } from "@astrojs/starlight/components";
+---
+
+<CardGrid>
+  <article class="card sl-flex">
+    <p class="title sl-flex">
+      <span class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 64 64"
+          ><path
+            fill="currentColor"
+            d="M43.4.159L12.06 28.492l24.31 7.538L18.12 64l35.26-33.426l-18.978-8.464z"
+          ></path></svg
+        >
+      </span>
+      <span>Effortless Tool Integrations</span>
+    </p>
+    <div class="body">
+      Discovery's dynamic task registry makes it easy to expand your toolset
+      with favorite open-source security tools. With a structured framework and
+      clear guidelines, adding new tools is seamless, and the platform's
+      extensible design supports continuous growth and diversity.
+    </div>
+  </article>
+  <article class="card sl-flex">
+    <p class="title sl-flex">
+      <span class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+          ><path
+            fill="currentColor"
+            d="m12 .44l10 3.5V12c0 4.127-2.533 7.012-4.896 8.803a19.7 19.7 0 0 1-4.65 2.595l-.087.033l-.025.009l-.007.002l-.003.001c-.001 0-.002 0-.332-.943l-.331.944h-.001l-.003-.002l-.007-.002l-.025-.01l-.087-.032a18 18 0 0 1-1.39-.606a20 20 0 0 1-3.26-1.989C4.534 19.012 2 16.127 2 12V3.94zm0 22.06l-.331.944l.331.116l.331-.116zm0-1.072l.009-.004a17.8 17.8 0 0 0 3.887-2.215C18.034 17.59 20 15.223 20 12V5.36l-8-2.8l-8 2.8V12c0 3.223 1.966 5.588 4.104 7.21A17.8 17.8 0 0 0 12 21.428m6.072-13.085l-7.071 7.071l-4.243-4.242l1.415-1.415L11 12.586l5.657-5.657z"
+          ></path></svg
+        >
+      </span>
+      <span>Automated and Secure Execution</span>
+    </p>
+    <div class="body">
+      Discovery offers automated and secure execution with Docker-powered
+      isolation for each tool, ensuring consistent results and preventing
+      conflicts. Containerization enhances security by isolating tools and
+      limiting their impact on your system. With centralized management, you can
+      orchestrate and control all your assessments from a single, unified
+      platform.
+    </div>
+  </article>
+  <article class="card sl-flex">
+    <p class="title sl-flex">
+      <span class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          ><path
+            d="M21 8c-1.45 0-2.26 1.44-1.93 2.51l-3.55 3.56c-.3-.09-.74-.09-1.04 0l-2.55-2.55C12.27 10.45 11.46 9 10 9c-1.45 0-2.27 1.44-1.93 2.52l-4.56 4.55C2.44 15.74 1 16.55 1 18c0 1.1.9 2 2 2c1.45 0 2.26-1.44 1.93-2.51l4.55-4.56c.3.09.74.09 1.04 0l2.55 2.55C12.73 16.55 13.54 18 15 18c1.45 0 2.27-1.44 1.93-2.52l3.56-3.55c1.07.33 2.51-.48 2.51-1.93c0-1.1-.9-2-2-2"
+          ></path><path
+            fill="currentColor"
+            d="m15 9l.94-2.07L18 6l-2.06-.93L15 3l-.92 2.07L12 6l2.08.93zM3.5 11L4 9l2-.5L4 8l-.5-2L3 8l-2 .5L3 9z"
+          ></path></svg
+        >
+      </span>
+      <span>Real-Time Insights</span>
+    </p>
+    <div class="body">
+      Discovery delivers real-time insights through WebSocket integration,
+      offering live updates on assessment progress, results, and errors.
+      Optional Pusher integration adds extra real-time notifications for
+      critical events.
+    </div>
+  </article>
+  <article class="card sl-flex">
+    <p class="title sl-flex">
+      <span class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 32 32"
+          fill="currentColor"
+          ><path
+            d="M15.5 1.125C7.278 1.125.59 7.815.59 16.035c0 6.263 3.88 11.635 9.36 13.84l3.64-9.076a5.131 5.131 0 1 1 3.818-.001l3.64 9.075c5.48-2.206 9.36-7.578 9.36-13.84c.002-8.22-6.687-14.91-14.908-14.91z"
+          ></path></svg
+        >
+      </span>
+      <span>Open Source and Community-Driven</span>
+    </p>
+    <div class="body">
+      Discovery is a free, open-source platform driven by the security
+      community. Contributions, feedback, and feature requests are encouraged to
+      continually improve and expand its capabilities.
+    </div>
+  </article>
+</CardGrid>
+
+<style>
+  .card {
+    --sl-card-border: var(--sl-color-purple);
+    --sl-card-bg: var(--sl-color-purple-low);
+    border: 1px solid var(--sl-color-gray-5);
+    background-color: var(--sl-color-black);
+    padding: clamp(1rem, calc(0.125rem + 3vw), 2.5rem);
+    flex-direction: column;
+    gap: clamp(0.5rem, calc(0.125rem + 1vw), 1rem);
+  }
+  .card:nth-child(1) {
+    --sl-card-border: var(--sl-color-orange);
+    --sl-card-bg: var(--sl-color-orange-low);
+  }
+  .card:nth-child(2) {
+    --sl-card-border: var(--sl-color-green);
+    --sl-card-bg: var(--sl-color-green-low);
+  }
+  .card:nth-child(3) {
+    --sl-card-border: var(--sl-color-red);
+    --sl-card-bg: var(--sl-color-red-low);
+  }
+  .card:nth-child(4) {
+    --sl-card-border: var(--sl-color-blue);
+    --sl-card-bg: var(--sl-color-blue-low);
+  }
+  .title {
+    font-weight: 600;
+    font-size: var(--sl-text-h4);
+    color: var(--sl-color-white);
+    line-height: var(--sl-line-height-headings);
+    gap: 1rem;
+    align-items: center;
+  }
+  .card .icon {
+    border: 1px solid var(--sl-card-border);
+    background-color: var(--sl-card-bg);
+    padding: 0.2em;
+    border-radius: 0.25rem;
+  }
+  .card .body {
+    margin: 0;
+    font-size: clamp(
+      var(--sl-text-sm),
+      calc(0.5rem + 1vw),
+      var(--sl-text-body)
+    );
+  }
+</style>

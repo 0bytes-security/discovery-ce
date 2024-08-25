@@ -1,0 +1,104 @@
+---
+title: discovery-schema
+discription: "Discovery CLI Tool: discovery-schema"
+editUrl: https://github.com/0bytes-security/discovery-ce/edit/docs/src/content/docs/cli/discovery-schema.mdx
+---
+
+The `discovery-schema` command-line tool provides utilities for generating and validating task and workflow schemas for Discovery.  It helps streamline the process of integrating new security tools and defining workflows, reducing errors, and improving consistency. 
+
+## Installation
+
+The `discovery-schema` CLI is installed automatically as part of the Discovery backend setup. Make sure you have followed the backend installation instructions in the [Getting Started](/getting-started/installation) page.
+
+## Usage
+
+```bash
+discovery-schema <command> [options] 
+```
+
+### Available Commands:
+
+- **`generate`:** Generates JSON schema files for tasks and workflows.
+- **`validate`:** Validates task and workflow schema files. 
+
+### Generate Command 
+
+```
+discovery-schema generate -O <output_directory> 
+```
+
+**Options:**
+
+- `-O`, `--output`:  **Required.**  The directory path where the generated schema files will be saved. 
+
+**Example:**
+
+```bash
+discovery-schema generate -O ./schemas 
+```
+
+This will create two files in the `schemas` directory:
+
+- `workflow.schema.json`: The JSON schema for Discovery workflows.
+- `task.schema.json`:  The JSON schema for Discovery tasks.
+
+### Validate Command 
+
+```
+discovery-schema validate (-f <schema_file> | --dir <schema_directory>) [-t <schema_type>]
+```
+
+**Options:**
+
+- `-f`, `--file`:  The path to a single schema file to validate. 
+- `--dir`: The path to a directory containing schema files to validate. 
+- `-t`, `--type`:  (Optional)  The schema type (`workflow` or `task`). If not specified, the tool will attempt to auto-detect the schema type based on the file name.  
+
+**Examples:**
+
+- **Validate a Single File:**
+   ```bash 
+   discovery-schema validate -f ./schemas/nmap.task.discovery.yaml
+   ```
+- **Validate All Files in a Directory:**
+   ```bash 
+   discovery-schema validate --dir ./schemas
+   ```
+- **Validate a File with Explicit Type:**
+   ```bash
+   discovery-schema validate -f ./my_workflow.yaml -t workflow
+   ```
+
+**Output:**
+
+The tool will print messages to the console indicating whether the validation was successful. If errors are found, detailed error messages will be displayed, including the location of the error within the schema file. 
+
+## Benefits of Using `discovery-schema`
+
+* **Reduced Errors:**  Schema validation helps catch configuration errors early, preventing invalid workflows and task definitions. 
+* **Improved Consistency:**  Using standardized schemas enforces consistency across different task and workflow definitions.
+* **Simplified Development:** The `discovery-schema` tool automates the process of generating and validating schemas, freeing developers to focus on other tasks. 
+* **Enhanced Collaboration:**  The use of schemas allows for easier collaboration among team members, as it provides a clear definition of the expected data structure and format. 
+
+## Integrating Schema Validation in VS Code 
+
+You can configure VS Code to use the generated schemas for real-time YAML validation:
+
+1. **Update Workspace Settings:**  In your Discovery code workspace (`.code-workspace` file), add the following to the `settings` object:
+
+   ```json
+   "yaml.schemas": {
+     "./workflow.schema.json": [
+       "*.workflow.discovery.yaml",
+       "*.workflow.discovery.yml"
+     ],
+     "./task.schema.json": [
+       "*.task.discovery.yaml",
+       "*.task.discovery.yml"
+     ]
+   }
+   ```
+
+2. **Install YAML Extension:**  If you haven't already, install the Red Hat YAML extension for VS Code.  
+
+With these settings, VS Code will automatically validate your YAML task and workflow definition files against the corresponding JSON schemas, highlighting any errors as you type. 
