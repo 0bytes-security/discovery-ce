@@ -1,5 +1,5 @@
 # Stage 1: Build Stage
-FROM python:3.12@sha256:e3d5b6f95ce66923b5e48a06ee5755abb097de96a8617c3f2f7d431d48e63d35 AS app-base
+FROM python:3.13@sha256:4f3780acb8d126492a8890a1e1715d36773c0cc1865b5aa569ba857548d0f51f AS app-base
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
